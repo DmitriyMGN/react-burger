@@ -1,7 +1,20 @@
 import React from 'react';
 import './App.css';
+import { useState, useEffect } from "react";
+import api from "../../utils/api.js";
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    api.getData()
+      .then((res) => setData(res.data))
+  }, [])
+
+  console.log(data)
+
+  
+
   return (
     <div className="App">
       <header className="App-header">
