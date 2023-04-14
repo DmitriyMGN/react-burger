@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { useState, useEffect } from "react";
 import api from "../../utils/api.js";
+import AppHeader from "../app-header/app-header";
 
 function App() {
   const [data, setData] = useState(null);
@@ -14,7 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <AppHeader/>
+      {/* <header className="App-header">
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
@@ -26,7 +28,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
