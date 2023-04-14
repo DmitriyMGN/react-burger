@@ -1,14 +1,38 @@
-.nav {
+.header {
+    margin: 40px;
     display: flex;
-    justify-content: space-between;
-    margin: 0 320px;
+    justify-content: center;
+}
+.nav {
+    height: 88px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .nav__items {
+    margin-right: 90px;
     display: flex;
 }
 
 .nav__item {
     display: flex;
     align-items: center;
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #F2F2F3;
 }
+
+.nav__item_profile {
+    margin-left: 289px;
+}
+
+@media screen and (max-width:1345px) {
+    .nav__item_profile {
+        margin-left: 89px;;
+    }
+  }

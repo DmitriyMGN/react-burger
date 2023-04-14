@@ -1,27 +1,32 @@
-import { Logo, BurgerIcon, ListIcon, ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components' 
-import styles from '../app-header/app-header.module.css'
+import {
+  Logo,
+  BurgerIcon,
+  ListIcon,
+  ProfileIcon,
+} from "@ya.praktikum/react-developer-burger-ui-components";
+import styles from "../app-header/app-header.module.css";
 function AppHeader() {
-
-  
-    return (
-      <header>
-        <nav className={`${styles.nav} p-4`}>
-          <div className={`${styles.nav__items}`}>
-            <div className={`${styles.nav__item} pl-5 pr-5 pb-5 pt-5`}>
-              <BurgerIcon />
-              <p className={`p-2`}>Конструктор</p>
-            </div>
-            <div className={`${styles.nav__item} pl-5 pr-5 pb-5 pt-5`}>
-              <ListIcon />
-              <p>Лента заказов</p>
-            </div>
-          </div>
-
-          <Logo />
+  return (
+    <header className={`${styles.header}`}>
+      <nav className={`${styles.nav}`}>
+        <div className={`${styles.nav__items}`}>
+          <a href="/" className={`${styles.nav__item} pl-5 pr-5`}>
+            <BurgerIcon />
+            <p className={`text text_type_main-default pl-2`}>Конструктор</p>
+          </a>
+          <a href="/" className={`${styles.nav__item} pl-2 pr-5`}>
+            <ListIcon />
+            <p className={`text text_type_main-default pl-2`}>Лента заказов</p>
+          </a>
+        </div>
+        <Logo />
+        <a href="/" className={`${styles.nav__item} ${styles.nav__item_profile} pl-5 pr-5`}>
           <ProfileIcon />
-        </nav>
-      </header>
-    );
-  }
-  
-  export default AppHeader;
+          <p className={`text text_type_main-default pl-2`}>Личный кабинет</p>
+        </a>
+      </nav>
+    </header>
+  );
+}
+
+export default AppHeader;
