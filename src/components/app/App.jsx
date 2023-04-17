@@ -1,8 +1,10 @@
 import React from 'react';
-import './App.css';
+import styles from "../app/app.module.css";
 import { useState, useEffect } from "react";
 import api from "../../utils/api.js";
 import AppHeader from "../app-header/app-header";
+import BurgerIngredients from "../burger-ingredients/burger-ingredients"
+import BurgerConstructor from "../burger-constructor/burger-constructor"
 
 function App() {
   const [data, setData] = useState(null);
@@ -14,21 +16,13 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       <AppHeader/>
-      {/* <header className="App-header">
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+      <div className={`${styles.container}`}>
+      <BurgerIngredients/>
+      <BurgerConstructor/>
+      </div>
+      
     </div>
   );
 }
