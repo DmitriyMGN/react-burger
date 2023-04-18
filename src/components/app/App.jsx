@@ -7,11 +7,11 @@ import BurgerIngredients from "../burger-ingredients/burger-ingredients"
 import BurgerConstructor from "../burger-constructor/burger-constructor"
 
 function App() {
-  const [data, setData] = useState(null);
+  const [dataIngredients, setDataIngredients] = useState(null);
 
   useEffect(() => {
     api.getData()
-      .then((res) => setData(res.data))
+      .then((res) => setDataIngredients(res.data))
   }, [])
 
 
@@ -19,8 +19,10 @@ function App() {
     <div>
       <AppHeader/>
       <div className={`${styles.container}`}>
-      <BurgerIngredients/>
-      <BurgerConstructor/>
+      <BurgerIngredients 
+      dataIngredients = {dataIngredients}
+      />
+      {/* <BurgerConstructor/> */}
       </div>
       
     </div>
