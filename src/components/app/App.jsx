@@ -19,12 +19,11 @@ function App() {
     <div>
       <AppHeader/>
       <div className={`${styles.container}`}>
-      <BurgerIngredients 
-      dataIngredients = {dataIngredients}
-      />
-      {/* <BurgerConstructor/> */}
-      </div>
-      
+        <BurgerIngredients 
+        dataIngredients = {dataIngredients}
+        />
+        <BurgerConstructor/>
+        </div>
     </div>
   );
 }

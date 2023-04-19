@@ -49,18 +49,20 @@ import {
             Начинки
           </Tab>
         </div>
-        <BurgerIngredient 
-        title={"Булки"}
-        dataIngredients = {buns}
-        />
-        <BurgerIngredient 
-        title={"Соусы"}
-        dataIngredients = {sauce}
-        />
-        <BurgerIngredient 
-        title={"Начинки"}
-        dataIngredients = {mains}
-        />
+        <div className={styles.content} >
+          <BurgerIngredient 
+          title={"Булки"}
+          dataIngredients = {buns}
+          />
+          <BurgerIngredient 
+          title={"Соусы"}
+          dataIngredients = {sauce}
+          />
+          <BurgerIngredient 
+          title={"Начинки"}
+          dataIngredients = {mains}
+          />
+        </div>
       </div>
     );
   }

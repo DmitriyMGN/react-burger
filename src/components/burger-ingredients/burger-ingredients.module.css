@@ -3,6 +3,11 @@
 }
 
 .ingredients {
-    width: 600px;
+    max-width: 592px;
     margin: 0 auto;
+}
+
+.content {
+    overflow-y: scroll;
+    height: 700px;
 }

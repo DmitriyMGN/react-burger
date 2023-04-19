@@ -1,5 +1,5 @@
 .ingredientbox {
-    width: 600px;
+    width: 580px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
