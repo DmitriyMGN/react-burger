@@ -7,7 +7,19 @@ import {
 import { useState, useEffect } from "react";
 import styles from "../burger-constructor/burger-constructor.module.css";
 
-function BurgerConstructor() {
+function BurgerConstructor({ ingredients }) {
+  console.log(ingredients);
+  const [bunInredient, setBunInredient] = useState(null)
+  const [anotherInredients, setAnotherInredients] = useState(null)
+  useEffect(()=> {
+    if(ingredients) {
+      setBunInredient(ingredients.find((item) => item.type === "bun"))
+      setAnotherInredients(ingredients.filter((item) => item.type !== "bun"))
+    }
+  },[ingredients])
+
+  console.log(bunInredient);
+
   return (
     <>
       <div className={`mt-25`}>
@@ -18,31 +30,42 @@ function BurgerConstructor() {
               type="top"
               isLocked={true}
               text="Краторная булка N-200i (верх)"
-              price={200}
-              thumbnail={"img"}
+              price={bunInredient ? bunInredient.price : ""}
+              thumbnail={bunInredient ? bunInredient.image : ""}
             />
           </div>
-          <div className={`${styles.burgerConstructor__element} `}>
-            <ConstructorElement
-              text="Краторная булка N-200i (верх)"
-              price={50}
-              thumbnail={"img"}
-            />
-          </div>
+          {anotherInredients 
+            ? anotherInredients.map((ingredient) => {
+                return (
+                  <div className={`${styles.burgerConstructor__element} `} key={ingredient._id}>
+                    <ConstructorElement
+                      text={ingredient.name}
+                      price={ingredient.price}
+                      thumbnail={ingredient.image}
+                    />
+                  </div>
+                );
+              })
+            : ""}
           <div className={`${styles.burgerConstructor__element} `}>
             <ConstructorElement
               type="bottom"
               isLocked={true}
               text="Краторная булка N-200i (низ)"
-              price={200}
-              thumbnail={"img"}
+              price={bunInredient ? bunInredient.price : ""}
+              thumbnail={bunInredient ? bunInredient.image : ""}
             />
           </div>
         </div>
         <div className={`${styles.buttonContainer} mt-10`}>
           <span className={`text text_type_digits-medium mr-2`}>450</span>
           <CurrencyIcon />
-          <Button htmlType="submit" type="primary" size="large" extraClass="ml-10">
+          <Button
+            htmlType="submit"
+            type="primary"
+            size="large"
+            extraClass="ml-10"
+          >
             Оформить заказ
           </Button>
         </div>

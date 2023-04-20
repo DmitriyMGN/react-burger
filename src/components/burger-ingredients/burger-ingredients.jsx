@@ -5,35 +5,35 @@ import {
   import BurgerIngredient from "../burger-ingredient/burger-ingredient"
   import styles from "../burger-ingredients/burger-ingredients.module.css";
 
-  function BurgerIngredients({dataIngredients}) {
+  function BurgerIngredients({ingredients}) {
     const [current, setCurrent] = useState('one')
     const [buns, setBuns] = useState(null)
     const [sauce, setSauce] = useState(null)
     const [mains, setMains] = useState(null)
 
     useEffect(() => {
-      if (dataIngredients) {
-      setBuns(dataIngredients.filter((item) => {
+      if (ingredients) {
+      setBuns(ingredients.filter((item) => {
         return item.type === "bun"
       }))
     }
-    },[dataIngredients])
+    },[ingredients])
 
     useEffect(() => {
-      if (dataIngredients) {
-      setSauce(dataIngredients.filter((item) => {
+      if (ingredients) {
+      setSauce(ingredients.filter((item) => {
         return item.type === "sauce"
       }))
     }
-    },[dataIngredients])
+    },[ingredients])
 
     useEffect(() => {
-      if (dataIngredients) {
-      setMains(dataIngredients.filter((item) => {
+      if (ingredients) {
+      setMains(ingredients.filter((item) => {
         return item.type === "main"
       }))
     }
-    },[dataIngredients])
+    },[ingredients])
     
     return (
       <div className={styles.ingredients}>
@@ -52,15 +52,15 @@ import {
         <div className={styles.content} >
           <BurgerIngredient 
           title={"Булки"}
-          dataIngredients = {buns}
+          ingredients = {buns}
           />
           <BurgerIngredient 
           title={"Соусы"}
-          dataIngredients = {sauce}
+          ingredients = {sauce}
           />
           <BurgerIngredient 
           title={"Начинки"}
-          dataIngredients = {mains}
+          ingredients = {mains}
           />
         </div>
       </div>

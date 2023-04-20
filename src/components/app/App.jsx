@@ -20,9 +20,11 @@ function App() {
       <AppHeader/>
       <div className={`${styles.container}`}>
         <BurgerIngredients 
-        dataIngredients = {dataIngredients}
+        ingredients = {dataIngredients}
         />
-        <BurgerConstructor/>
+        <BurgerConstructor
+        ingredients = {dataIngredients}
+        />
         </div>
     </div>
   );

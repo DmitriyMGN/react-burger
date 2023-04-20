@@ -5,14 +5,14 @@ import {
 import { useState, useEffect } from "react";
 import styles from "../burger-ingredient/burger-ingredient.module.css";
 
-function BurgerIngredient({ title, dataIngredients }) {
+function BurgerIngredient({ title, ingredients }) {
 
   return (
     <>
       <h2 className={`text text_type_main-medium pb-6`}>{title}</h2>
       <div className={`${styles.ingredientbox} pb-10`}>
-        {dataIngredients
-          ? dataIngredients.map((ingredient) => {
+        {ingredients
+          ? ingredients.map((ingredient) => {
               return (
                 <div className={`${styles.ingredient} pb-8`} key={ingredient._id}>
                   <Counter count={"0"}/>
