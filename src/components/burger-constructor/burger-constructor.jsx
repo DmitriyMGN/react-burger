@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import styles from "../burger-constructor/burger-constructor.module.css";
 
 function BurgerConstructor({ ingredients }) {
-  console.log(ingredients);
   const [bunInredient, setBunInredient] = useState(null)
   const [anotherInredients, setAnotherInredients] = useState(null)
   useEffect(()=> {
@@ -17,8 +16,6 @@ function BurgerConstructor({ ingredients }) {
       setAnotherInredients(ingredients.filter((item) => item.type !== "bun"))
     }
   },[ingredients])
-
-  console.log(bunInredient);
 
   return (
     <>
@@ -34,6 +31,7 @@ function BurgerConstructor({ ingredients }) {
               thumbnail={bunInredient ? bunInredient.image : ""}
             />
           </div>
+          <div className={`${styles.burgerConstructor__main} `}>
           {anotherInredients 
             ? anotherInredients.map((ingredient) => {
                 return (
@@ -47,6 +45,7 @@ function BurgerConstructor({ ingredients }) {
                 );
               })
             : ""}
+            </div>
           <div className={`${styles.burgerConstructor__element} `}>
             <ConstructorElement
               type="bottom"

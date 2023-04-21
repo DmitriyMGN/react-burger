@@ -1,10 +1,9 @@
 .burgerConstructor {
-    height: 700px;
+    height: 550px;
     display: flex;
     flex-direction: column;
     align-items: end;
     gap: 16px;
-    overflow-y: scroll;
 }
 
 .burgerConstructor__element {
@@ -15,4 +14,11 @@
     display: flex;
     justify-content: end;
     align-items: center;
+}
+
+.burgerConstructor__main {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
