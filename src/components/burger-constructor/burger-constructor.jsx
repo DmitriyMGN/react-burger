@@ -22,7 +22,6 @@ function BurgerConstructor({ ingredients }) {
       <div className={`mt-25`}>
         <div className={`${styles.burgerConstructor} `}>
           <div className={`${styles.burgerConstructor__element} `}>
-            <DragIcon />
             <ConstructorElement
               type="top"
               isLocked={true}
@@ -36,6 +35,7 @@ function BurgerConstructor({ ingredients }) {
             ? anotherInredients.map((ingredient) => {
                 return (
                   <div className={`${styles.burgerConstructor__element} `} key={ingredient._id}>
+                    <DragIcon />
                     <ConstructorElement
                       text={ingredient.name}
                       price={ingredient.price}
