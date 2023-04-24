@@ -5,7 +5,6 @@ import api from "../../utils/api.js";
 import AppHeader from "../app-header/app-header";
 import BurgerIngredients from "../burger-ingredients/burger-ingredients"
 import BurgerConstructor from "../burger-constructor/burger-constructor"
-import Modal from '../modal/modal';
 
 function App() {
   const [dataIngredients, setDataIngredients] = useState(null);
@@ -18,7 +17,6 @@ function App() {
 
   return (
     <div>
-      <Modal/>
       <AppHeader/>
       <div className={`${styles.container}`}>
         <BurgerIngredients 

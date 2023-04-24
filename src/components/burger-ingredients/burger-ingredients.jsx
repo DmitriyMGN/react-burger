@@ -4,12 +4,18 @@ import {
   import { useState, useEffect} from "react";
   import BurgerIngredient from "../burger-ingredient/burger-ingredient"
   import styles from "../burger-ingredients/burger-ingredients.module.css";
+  import Modal from '../modal/modal';
 
   function BurgerIngredients({ingredients}) {
     const [current, setCurrent] = useState('one')
     const [buns, setBuns] = useState(null)
     const [sauce, setSauce] = useState(null)
     const [mains, setMains] = useState(null)
+    const [ingreintModal, setIngredientModal] = useState(true)
+
+    const modalClose = () => {
+      setIngredientModal(null)
+    }
 
     useEffect(() => {
       if (ingredients) {
@@ -63,6 +69,12 @@ import {
           ingredients = {mains}
           />
         </div>
+        {ingreintModal ?
+        <Modal 
+        title="Детали ингредиента"
+        onClose={modalClose}
+        /> : ""}
+
       </div>
     );
   }
