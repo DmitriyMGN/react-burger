@@ -8,7 +8,7 @@ import {
 
 const modalRoot = document.getElementById("modals");
 
-const Modal = ({title, onClose}) => {
+const Modal = ({title, onClose, children}) => {
 
   useEffect(() => {
     document.addEventListener('keydown' , (e) => {
@@ -27,6 +27,7 @@ const Modal = ({title, onClose}) => {
           <CloseIcon onClick={onClose} className={styles.modal__cross}/>
           </button>
         </div>
+        <div className={styles.content}>{children}</div>
       </div>
       <ModalOverlay onClose={onClose}/>
     </>,

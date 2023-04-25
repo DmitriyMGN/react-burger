@@ -2,7 +2,8 @@ import {
     Tab
   } from "@ya.praktikum/react-developer-burger-ui-components";
   import { useState, useEffect} from "react";
-  import BurgerIngredient from "../burger-ingredient/burger-ingredient"
+  import IngredientsCategory from "../ingredients-category/ingredients-category";
+  import IngredientDetails from "../ingredient-details/ingredient-details";
   import styles from "../burger-ingredients/burger-ingredients.module.css";
   import Modal from '../modal/modal';
 
@@ -11,7 +12,7 @@ import {
     const [buns, setBuns] = useState(null)
     const [sauce, setSauce] = useState(null)
     const [mains, setMains] = useState(null)
-    const [ingreintModal, setIngredientModal] = useState(true)
+    const [ingreintModal, setIngredientModal] = useState(null)
 
     const modalClose = () => {
       setIngredientModal(null)
@@ -57,24 +58,29 @@ import {
           </Tab>
         </div>
         <div className={styles.content} >
-          <BurgerIngredient 
+          <IngredientsCategory 
           title={"Булки"}
           ingredients = {buns}
+          setIngredientModal = {setIngredientModal}
           />
-          <BurgerIngredient 
+          <IngredientsCategory 
           title={"Соусы"}
           ingredients = {sauce}
+          setIngredientModal = {setIngredientModal}
           />
-          <BurgerIngredient 
+          <IngredientsCategory 
           title={"Начинки"}
           ingredients = {mains}
+          setIngredientModal = {setIngredientModal}
           />
         </div>
         {ingreintModal ?
-        <Modal 
-        title="Детали ингредиента"
-        onClose={modalClose}
-        /> : ""}
+        <Modal title="Детали ингредиента" onClose={modalClose}> 
+        <IngredientDetails 
+        ingreintModal={ingreintModal}
+        />
+        </Modal>
+        : ""}
 
       </div>
     );
