@@ -9,7 +9,14 @@ import {
 const modalRoot = document.getElementById("modals");
 
 const Modal = ({title, onClose}) => {
-  console.log(modalRoot);
+
+  useEffect(() => {
+    document.addEventListener('keydown' , (e) => {
+      if (e.code === 'Escape') {
+        onClose()
+      }
+    })
+  }, [onClose])
 
   return ReactDOM.createPortal(
     <>
@@ -21,7 +28,7 @@ const Modal = ({title, onClose}) => {
           </button>
         </div>
       </div>
-      <ModalOverlay />
+      <ModalOverlay onClose={onClose}/>
     </>,
     modalRoot
   );
