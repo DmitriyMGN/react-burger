@@ -2,26 +2,28 @@ import styles from "./ingredient-details.module.css";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
 const IngredientDetails = ({ingreintModal}) => {
+  console.log(ingreintModal)
   return (
-    <div>
-      <img src={ingreintModal.image} alt="Фото ингредиента" />
-      <h3 className={`text text_type_main-medium mt-4 mb-8`}>title</h3>
-      <ul>
-        <li>
-            <p>Калории,ккал</p>
-            <p>1</p>
+    <div className={styles.container}>
+      <img className={styles.container__image} src={ingreintModal.image} alt="Фото ингредиента" />
+      <h3 className={`text text_type_main-medium mt-4 mb-8`}>{ingreintModal.name}</h3>
+      <ul className={styles.container__list}>
+        <li className={styles.container__item}>
+            <p className={`text text_type_main-default`}>Калории,ккал</p>
+            <p className={`text text_type_digits-default mt-2`}>{ingreintModal.calories}</p>
         </li>
-        <li>
-            <p>Белки, г</p>
-            <p>1</p>
+        <li className={styles.container__item}>
+            <p className={`text text_type_main-default`}>Белки, г</p>
+            <p className={`text text_type_digits-default mt-2`}>{ingreintModal.proteins}</p>
         </li>
-        <li>
-            <p>Жиры, г</p>
-            <p>1</p>
+        <li className={styles.container__item}>
+            <p className={`text text_type_main-default`} >Жиры, г</p>
+            <p className={`text text_type_digits-default mt-2`} >{ingreintModal.fat}</p>
         </li>
-        <li>
-            <p>Углеводы, г</p>
-            <p>1</p>
+        <li className={styles.container__item}>
+            <p className={`text text_type_main-default`}>Углеводы, г</p>
+            <p className={`text text_type_digits-default mt-2`}>{ingreintModal.carbohydrates}</p> 
+
         </li>
 
       </ul>
