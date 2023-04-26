@@ -6,10 +6,18 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import { useState, useEffect } from "react";
 import styles from "../burger-constructor/burger-constructor.module.css";
+import Modal from "../modal/modal";
+import OrderDetails from "../order-details/order-details";
 
 function BurgerConstructor({ ingredients }) {
   const [bunInredient, setBunInredient] = useState(null)
   const [anotherInredients, setAnotherInredients] = useState(null)
+  const [modalOrderDetails, setModalOrderDetails] = useState(false)
+
+  const modalClose = () => {
+    setModalOrderDetails(false)
+  }
+
   useEffect(()=> {
     if(ingredients) {
       setBunInredient(ingredients.find((item) => item.type === "bun"))
@@ -64,9 +72,17 @@ function BurgerConstructor({ ingredients }) {
             type="primary"
             size="large"
             extraClass="ml-10"
+            onClick={() => setModalOrderDetails(true)}
           >
             Оформить заказ
           </Button>
+          { modalOrderDetails ?
+            <Modal onClose={modalClose}
+            >
+              <OrderDetails></OrderDetails>
+            </Modal>
+            : ""
+          }
         </div>
       </div>
 

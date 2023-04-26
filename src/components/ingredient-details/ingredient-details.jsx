@@ -1,6 +1,7 @@
 import styles from "./ingredient-details.module.css";
 import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 
+
 const IngredientDetails = ({ingreintModal}) => {
   console.log(ingreintModal)
   return (
@@ -17,7 +18,7 @@ const IngredientDetails = ({ingreintModal}) => {
             <p className={`text text_type_digits-default mt-2`}>{ingreintModal.proteins}</p>
         </li>
         <li className={styles.container__item}>
-            <p className={`text text_type_main-default`} >Жиры, г</p>
+            <p className={`text text_type_main-default`}>Жиры, г</p>
             <p className={`text text_type_digits-default mt-2`} >{ingreintModal.fat}</p>
         </li>
         <li className={styles.container__item}>
