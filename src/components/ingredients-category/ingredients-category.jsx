@@ -5,6 +5,8 @@ import {
   import { useState, useEffect } from "react";
   import BurgerIngredient from "../burger-ingredient/burger-ingredient";
   import styles from "./ingredients-category.module.css";
+  import PropTypes from "prop-types";
+  import { ingredientPropType } from "../../utils/prop-types";
   
   function IngredientsCategory({ title, ingredients, setIngredientModal}) {
   
@@ -26,6 +28,13 @@ import {
         </div>
       </>
     );
+  }
+
+  IngredientsCategory.propTypes = {
+    title: PropTypes.string.isRequired,
+    titleId: PropTypes.string.isRequired,
+    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
+    setIngredientModal: PropTypes.func
   }
   
   export default IngredientsCategory;

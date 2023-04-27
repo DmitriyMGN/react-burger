@@ -2,10 +2,13 @@ import {
   Counter,
   CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import styles from "../burger-ingredient/burger-ingredient.module.css";
 
-function BurgerIngredient({ title, ingredient, setIngredientModal}) {
+import { ingredientPropType } from "../../utils/prop-types";
+
+function BurgerIngredient({ count, ingredient, setIngredientModal}) {
   const handleClick = () => {
     setIngredientModal(ingredient)
   }
@@ -26,6 +29,12 @@ function BurgerIngredient({ title, ingredient, setIngredientModal}) {
       </h4>
     </div>
   );
+}
+
+BurgerIngredient.propTypes = {
+  count: PropTypes.number,
+  ingredient: ingredientPropType.isRequired,
+  setIngredientModal: PropTypes.func.isRequired
 }
 
 export default BurgerIngredient;

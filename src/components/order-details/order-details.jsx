@@ -1,8 +1,7 @@
 import styles from "./order-details.module.css";
-import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import done from "../../images/done.svg"
 
-const OrderDetails = ({}) => {
+const OrderDetails = () => {
 
   return (
     <div className={styles.container}>

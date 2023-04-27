@@ -8,6 +8,8 @@ import { useState, useEffect } from "react";
 import styles from "../burger-constructor/burger-constructor.module.css";
 import Modal from "../modal/modal";
 import OrderDetails from "../order-details/order-details";
+import PropTypes from "prop-types";
+import { ingredientPropType } from "../../utils/prop-types";
 
 function BurgerConstructor({ ingredients }) {
   const [bunInredient, setBunInredient] = useState(null)
@@ -90,5 +92,10 @@ function BurgerConstructor({ ingredients }) {
     </>
   );
 }
+
+BurgerConstructor.propTypes = {
+  ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired
+}
+
 
 export default BurgerConstructor;

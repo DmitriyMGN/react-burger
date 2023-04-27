@@ -6,6 +6,8 @@ import {
   import IngredientDetails from "../ingredient-details/ingredient-details";
   import styles from "../burger-ingredients/burger-ingredients.module.css";
   import Modal from '../modal/modal';
+  import PropTypes from "prop-types";
+  import { ingredientPropType } from "../../utils/prop-types";
 
   function BurgerIngredients({ingredients}) {
     const [current, setCurrent] = useState('one')
@@ -85,6 +87,11 @@ import {
       </div>
     );
   }
+
+  BurgerIngredients.propTypes = {
+    ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired
+  }
+  
   
   export default BurgerIngredients;
   

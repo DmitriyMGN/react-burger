@@ -1,5 +1,5 @@
 import styles from "./ingredient-details.module.css";
-import { CloseIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import { ingredientPropType } from "../../utils/prop-types";
 
 
 const IngredientDetails = ({ingreintModal}) => {
@@ -30,6 +30,10 @@ const IngredientDetails = ({ingreintModal}) => {
       </ul>
     </div>
   );
+};
+
+IngredientDetails.propTypes = {
+  ingreintModal: ingredientPropType.isRequired,
 };
 
 export default IngredientDetails;
