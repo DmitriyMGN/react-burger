@@ -59,22 +59,29 @@ import {
             Начинки
           </Tab>
         </div>
-        <div className={styles.content} >
-          <IngredientsCategory 
-          title={"Булки"}
-          ingredients = {buns}
-          setIngredientModal = {setIngredientModal}
-          />
-          <IngredientsCategory 
-          title={"Соусы"}
-          ingredients = {sauce}
-          setIngredientModal = {setIngredientModal}
-          />
-          <IngredientsCategory 
-          title={"Начинки"}
-          ingredients = {mains}
-          setIngredientModal = {setIngredientModal}
-          />
+        <div className={styles.content}>
+          {buns && sauce && mains ?
+          <>
+                  <IngredientsCategory 
+                    title={"Булки"}
+                    ingredients = {buns}
+                    setIngredientModal = {setIngredientModal}
+                    />
+                    <IngredientsCategory 
+                    title={"Соусы"}
+                    ingredients = {sauce}
+                    setIngredientModal = {setIngredientModal}
+                    />
+                    <IngredientsCategory 
+                    title={"Начинки"}
+                    ingredients = {mains}
+                    setIngredientModal = {setIngredientModal}
+                    />
+                    </>
+          
+        : ""}
+
+
         </div>
         {ingreintModal ?
         <Modal title="Детали ингредиента" onClose={modalClose}> 

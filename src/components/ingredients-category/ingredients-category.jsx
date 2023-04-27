@@ -27,7 +27,7 @@
 
   IngredientsCategory.propTypes = {
     title: PropTypes.string.isRequired,
-    titleId: PropTypes.string.isRequired,
+    titleId: PropTypes.string,
     ingredients: PropTypes.arrayOf(ingredientPropType.isRequired).isRequired,
     setIngredientModal: PropTypes.func
   }

@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <AppHeader/>
-      <div className={`${styles.container}`}>
+      {dataIngredients ? <div className={`${styles.container}`}>
         <BurgerIngredients 
         ingredients = {dataIngredients}
         />
@@ -26,6 +26,7 @@ function App() {
         ingredients = {dataIngredients}
         />
         </div>
+      : ""}
     </div>
   );
 }
