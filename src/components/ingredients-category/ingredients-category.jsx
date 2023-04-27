@@ -1,8 +1,3 @@
-import {
-    Counter,
-    CurrencyIcon,
-  } from "@ya.praktikum/react-developer-burger-ui-components";
-  import { useState, useEffect } from "react";
   import BurgerIngredient from "../burger-ingredient/burger-ingredient";
   import styles from "./ingredients-category.module.css";
   import PropTypes from "prop-types";

@@ -3,7 +3,6 @@ import {
   CurrencyIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
 import styles from "../burger-ingredient/burger-ingredient.module.css";
 
 import { ingredientPropType } from "../../utils/prop-types";
