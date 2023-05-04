@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from "../app/app.module.css";
 import { useState, useEffect } from "react";
 import api from "../../utils/api.js";
