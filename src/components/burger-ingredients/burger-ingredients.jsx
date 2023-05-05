@@ -9,15 +9,19 @@ import {
   import PropTypes from "prop-types";
   import { ingredientPropType } from "../../utils/prop-types";
   import { useSelector, useDispatch } from "react-redux";
+  import { RESET_INGREDIENT_MODAL } from "../../services/actions/ingredient-detail-modal"
+
 
   function BurgerIngredients() {
     const dispatch = useDispatch()
     const [currentTab, setCurrentTab] = useState("buns")
     const ingredients = useSelector((store) => store.ingredients.data)
-    const [ingreintModal, setIngredientModal] = useState(null)
+    const ingredientInModal = useSelector((store) => store.ingredientsDetailModal.data)
+ 
+    console.log(ingredientInModal)
 
     const modalClose = () => {
-      setIngredientModal(null)
+      dispatch({type: RESET_INGREDIENT_MODAL})
     }
 
     const buns = useMemo(
@@ -54,26 +58,23 @@ import {
           <IngredientsCategory 
             title={"Булки"}
             ingredients = {buns}
-            setIngredientModal = {setIngredientModal}
             />
             <IngredientsCategory 
             title={"Соусы"}
             ingredients = {sauces}
-            setIngredientModal = {setIngredientModal}
             />
             <IngredientsCategory 
             title={"Начинки"}
             ingredients = {mains}
-            setIngredientModal = {setIngredientModal}
             />
         </div>
-        {ingreintModal ?
+        {ingredientInModal && (
         <Modal title="Детали ингредиента" onClose={modalClose}> 
         <IngredientDetails 
-        ingreintModal={ingreintModal}
+        ingreintModal={ingredientInModal}
         />
         </Modal>
-        : ""}
+        )}
 
       </div>
     );

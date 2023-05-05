@@ -3,7 +3,7 @@
   import PropTypes from "prop-types";
   import { ingredientPropType } from "../../utils/prop-types";
   
-  function IngredientsCategory({ title, ingredients, setIngredientModal}) {
+  function IngredientsCategory({ title, ingredients}) {
   
     return (
       <>
@@ -15,7 +15,6 @@
                     <BurgerIngredient 
                         ingredient={ingredient}
                         key={ingredient._id}
-                        setIngredientModal = {setIngredientModal}
                     />
                 );
               })

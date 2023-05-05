@@ -3,6 +3,7 @@ import { ingredientPropType } from "../../utils/prop-types";
 
 
 const IngredientDetails = ({ingreintModal}) => {
+
   console.log(ingreintModal)
   return (
     <div className={styles.container}>

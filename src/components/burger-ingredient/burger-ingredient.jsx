@@ -4,12 +4,14 @@ import {
 } from "@ya.praktikum/react-developer-burger-ui-components";
 import PropTypes from "prop-types";
 import styles from "../burger-ingredient/burger-ingredient.module.css";
-
+import { useSelector, useDispatch } from "react-redux";
 import { ingredientPropType } from "../../utils/prop-types";
+import { SET_INGREDIENT_MODAL } from "../../services/actions/ingredient-detail-modal"
 
-function BurgerIngredient({ count, ingredient, setIngredientModal}) {
+function BurgerIngredient({ count, ingredient}) {
+  const dispatch = useDispatch()
   const handleClick = () => {
-    setIngredientModal(ingredient)
+    dispatch({ type: SET_INGREDIENT_MODAL, payload: ingredient})
   }
   return (
     <div className={`${styles.ingredient} pb-8`} key={ingredient._id} onClick={handleClick}>
@@ -32,8 +34,7 @@ function BurgerIngredient({ count, ingredient, setIngredientModal}) {
 
 BurgerIngredient.propTypes = {
   count: PropTypes.number,
-  ingredient: ingredientPropType.isRequired,
-  setIngredientModal: PropTypes.func.isRequired
+  ingredient: ingredientPropType.isRequired
 }
 
 export default BurgerIngredient;
