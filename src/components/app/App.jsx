@@ -15,7 +15,6 @@ function App() {
     dispatch(getIngredients())
   }, [dispatch])
 
-
   return (
     <div>
       <AppHeader/>
