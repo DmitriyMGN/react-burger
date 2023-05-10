@@ -17,8 +17,6 @@ import {
     const [currentTab, setCurrentTab] = useState("buns")
     const ingredients = useSelector((store) => store.ingredients.data)
     const ingredientInModal = useSelector((store) => store.ingredientsDetailModal.data)
- 
-    console.log(ingredientInModal)
 
     const modalClose = () => {
       dispatch({type: RESET_INGREDIENT_MODAL})

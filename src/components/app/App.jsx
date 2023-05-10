@@ -7,7 +7,7 @@ import BurgerIngredients from "../burger-ingredients/burger-ingredients"
 import BurgerConstructor from "../burger-constructor/burger-constructor"
 import { getIngredients } from "../../services/actions/ingredients"
 function App() {
-  // const [dataIngredients, setDataIngredients] = useState(null);
+
   const dispatch = useDispatch()
   const dataIngredients = useSelector((store) => store.ingredients.data)
 
@@ -23,7 +23,7 @@ function App() {
         ingredients = {dataIngredients}
         />
         <BurgerConstructor
-        ingredients = {dataIngredients}
+        // ingredients = {dataIngredients}
         />
         </div>
       : ""}
