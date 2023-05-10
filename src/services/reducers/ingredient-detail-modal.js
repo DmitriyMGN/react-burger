@@ -4,23 +4,21 @@ import {
 } from "../actions/ingredient-detail-modal";
 
 const initialState = {
-  data: null
-}
+  data: null,
+};
 
 export const ingredientDetailsModalReducer = (state = initialState, action) => {
-  switch (action.type){
+  switch (action.type) {
     case SET_INGREDIENT_MODAL: {
       return {
         ...state,
-        data: action.payload
-      }
+        data: action.payload,
+      };
     }
     case RESET_INGREDIENT_MODAL: {
-      return {
-        data: initialState
-      }
+      return initialState;
     }
-    default: 
-      return state
+    default:
+      return state;
   }
-}
+};

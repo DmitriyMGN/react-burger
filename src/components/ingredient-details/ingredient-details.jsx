@@ -4,7 +4,6 @@ import { ingredientPropType } from "../../utils/prop-types";
 
 const IngredientDetails = ({ingreintModal}) => {
 
-  console.log(ingreintModal)
   return (
     <div className={styles.container}>
       <img className={styles.container__image} src={ingreintModal.image} alt="Фото ингредиента" />

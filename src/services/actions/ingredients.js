@@ -10,7 +10,6 @@ export const getIngredients = () => (dispatch) => {
   })
   return api.getData()
   .then((ingredients) => {
-  console.log(ingredients) 
     dispatch({
       type: GET_INGREDIENTS_SUCCESS,
       payload: ingredients.data
