@@ -10,6 +10,7 @@ function App() {
 
   const dispatch = useDispatch()
   const dataIngredients = useSelector((store) => store.ingredients.data)
+  const constructorIngredients = useSelector((store) => store.burgerConstructor.ingredients)
 
   useEffect(() => {
     dispatch(getIngredients())
@@ -23,7 +24,7 @@ function App() {
         ingredients = {dataIngredients}
         />
         <BurgerConstructor
-        // ingredients = {dataIngredients}
+        ingredients = {constructorIngredients}
         />
         </div>
       : ""}

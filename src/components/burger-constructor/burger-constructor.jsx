@@ -10,6 +10,7 @@ import Modal from "../modal/modal";
 import OrderDetails from "../order-details/order-details";
 import PropTypes from "prop-types";
 import { ingredientPropType } from "../../utils/prop-types";
+import { useSelector } from "react-redux";
 
 function BurgerConstructor({ ingredients }) {
   const [bunInredient, setBunInredient] = useState(null)

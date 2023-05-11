@@ -7,11 +7,13 @@ import styles from "../burger-ingredient/burger-ingredient.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { ingredientPropType } from "../../utils/prop-types";
 import { SET_INGREDIENT_MODAL } from "../../services/actions/ingredient-detail-modal"
+import { CONSTRUCTOR_ADD } from "../../services/actions/constructor"
 
 function BurgerIngredient({ count, ingredient}) {
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch({ type: SET_INGREDIENT_MODAL, payload: ingredient})
+    dispatch({ type: CONSTRUCTOR_ADD, payload: ingredient})
   }
   return (
     <div className={`${styles.ingredient} pb-8`} key={ingredient._id} onClick={handleClick}>
