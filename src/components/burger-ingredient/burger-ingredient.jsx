@@ -13,7 +13,7 @@ function BurgerIngredient({ count, ingredient}) {
   const dispatch = useDispatch()
   const handleClick = () => {
     dispatch({ type: SET_INGREDIENT_MODAL, payload: ingredient})
-    dispatch({ type: CONSTRUCTOR_ADD, payload: ingredient})
+    // dispatch({ type: CONSTRUCTOR_ADD, payload: ingredient})
   }
   return (
     <div className={`${styles.ingredient} pb-8`} key={ingredient._id} onClick={handleClick}>
