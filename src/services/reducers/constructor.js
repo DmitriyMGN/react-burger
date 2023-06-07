@@ -24,6 +24,12 @@ export const constructorReducer = (state = initialState, action) => {
                 ingredients: [...state.ingredients, action.payload]
             }
         }
+        case CONSTRUCTOR_DELETE: {
+            return {
+                ...state,
+                ingredients: state.ingredients.filter(item => item !== action.payload)
+            }
+        }
         default: {
             return state;
         }

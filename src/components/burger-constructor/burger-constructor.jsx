@@ -23,7 +23,6 @@ function BurgerConstructor({ ingredients }) {
 
   useEffect(()=> {
     if(ingredients) {
-      console.log(ingredients)
       setBunInredient(ingredients.find((item) => item.type === "bun"))
       setAnotherInredients(ingredients.filter((item) => item.type !== "bun"))
     }
